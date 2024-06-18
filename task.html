@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <h1 id="taskname">Taskname</h1>
+    <ul>
+        <li id="deadline">Deadline</li>
+        <li id="description">Description</li>
+        <li id="owner">Owner</li>
+    </ul>
+    <form action="https://mytimer-backend.vercel.app/task" method="post" id="task-form">
+        <input type="text" name="taskname" placeholder="taskname">
+        <input type="date" name="deadline">
+        <input type="text" name="description" placeholder="description">
+        <input type="submit" value="Editar Tarefa" onclick="editTask()">
+    </form>
+    <script src="script.js" onload="readTask()"></script>
+    <script>
+document.getElementById('task-form').addEventListener('submit', event => {event.preventDefault()})    
+    </script>
+</body>
+</html>

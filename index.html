@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTimer</title>
+</head>
+<body>
+    <h1>MyTimer</h1>
+    <p>Bem vindo ao MyTimer, o melhor site de temporização de lista de tarefas!</p>
+    <form action="https://mytimer-backend.vercel.app/task" method="post" id="task-form">
+        <input type="text" name="taskname" placeholder="taskname">
+        <input type="date" name="deadline">
+        <input type="text" name="description" placeholder="description">
+        <input type="text" name="owner" placeholder="owner">
+        <input type="submit" value="Criar Tarefa" onclick="createTask()">
+    </form>
+    <ol id="tasks"></ol>
+    <script src="script.js" onload="readTasks()"></script>
+    <script>
+document.getElementById('task-form').addEventListener('submit', event => {event.preventDefault()})    
+    </script>
+</body>
+</html>
