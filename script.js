@@ -34,7 +34,7 @@ function readTasks() {
     .then(tasks => {
         for (task in tasks) {
             const item = document.createElement('li')
-            item.innerHTML = `<a onclick="document.location='${window.location.origin}/frontend/task.html?id=${tasks[task]._id}'">${tasks[task].taskname}</a><ul><li>Deadline: ${tasks[task].deadline}</li><li>Description: ${tasks[task].description}</li><li>Owner: ${tasks[task].owner}</li></ul><a onclick="deleteTask('${tasks[task]._id}')">Delete</a>`
+            item.innerHTML = `<a onclick="document.location='${window.location.origin}/task.html?id=${tasks[task]._id}'">${tasks[task].taskname}</a><ul><li>Deadline: ${tasks[task].deadline}</li><li>Description: ${tasks[task].description}</li><li>Owner: ${tasks[task].owner}</li></ul><a onclick="deleteTask('${tasks[task]._id}')">Delete</a>`
             document.getElementById('tasks').appendChild(item)
         }
     })
